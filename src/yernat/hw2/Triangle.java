@@ -1,7 +1,5 @@
 package yernat.hw2;
 
-import javax.crypto.spec.PSource;
-
 import static java.lang.Math.sqrt;
 
 public class Triangle {
