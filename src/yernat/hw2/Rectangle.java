@@ -1,7 +1,5 @@
 package yernat.hw2;
 
-import static java.lang.Math.sqrt;
-
 public class Rectangle {
     double a, b;
 
