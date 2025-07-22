@@ -1,6 +1,4 @@
-import myrzakanov.Rectangle;
-import myrzakanov.Square;
-import myrzakanov.Triangle;
+package myrzakanov;
 
 public class Main {
     public static void main(String[] args) {
