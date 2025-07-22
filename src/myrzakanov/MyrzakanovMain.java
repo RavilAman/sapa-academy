@@ -1,6 +1,6 @@
 package myrzakanov;
 
-public class Main {
+public class MyrzakanovMain {
     public static void main(String[] args) {
 
         Triangle answer1 = new Triangle(4,5,6);
