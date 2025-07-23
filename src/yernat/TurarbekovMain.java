@@ -1,3 +1,5 @@
+package yernat;
+
 import yernat.hw3.AbstractConvert;
 import yernat.hw3.CeltoFa;
 import yernat.hw3.KgtoFn;
