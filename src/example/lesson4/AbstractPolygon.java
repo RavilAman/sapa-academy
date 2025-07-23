@@ -1,4 +1,4 @@
-package example.lesson.four;
+package example.lesson4;
 
 public abstract class AbstractPolygon implements Polygon {
 

@@ -1,4 +1,4 @@
-package example.lesson.four;
+package example.lesson4;
 
 public interface Polygon {
 
