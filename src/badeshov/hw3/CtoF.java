@@ -4,14 +4,12 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class CtoF {
-
     public void convertCF() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Celsius: ");
             double c = scanner.nextDouble();
-
             double t = c * 9 / 5;
             double f = t + 32;
             System.out.println("Fahrenheit: " + f);
@@ -19,21 +17,17 @@ public class CtoF {
             System.out.println();
             System.out.println("Если хотите продолжить, нажмите на 1");
 
-            int r = 1;
-            int r = scanner.nextInt();
-            boolean r = true;
-            if (true) {
-                return;
+            String r = scanner.next();
+            if (r.equals("1")) {
+                continue;
             }
             else {
                 System.out.println("Рад помочь!");
+                break;
             }
         }
     }
-
-
 }
 /*
-Если хотите продолжить, нажмите на 1
 
  */
