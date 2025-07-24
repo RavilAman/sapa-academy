@@ -1,17 +1,15 @@
-package ulykbekova;
+package ulykbekova.hw.too;
 
 public class Triangle {
     double a;
     double b;
     double c; //polya
 
-
     public Triangle(double a, double b, double c){ // konst
         this.a=a;
         this.b=b;
         this.c=c;
     }
-
     public void getPerimetr(){
         double perimetr = a+c+b;
         System.out.println( perimetr);
@@ -21,10 +19,5 @@ public class Triangle {
         double polaudan = (a+b+c)/2;
         double audan =Math.sqrt((polaudan*(polaudan-a)*(polaudan-c)*(polaudan-b)));
         System.out.println(audan);
-
-
     }
-
-
-
  }

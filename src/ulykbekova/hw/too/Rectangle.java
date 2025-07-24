@@ -1,8 +1,7 @@
-package ulykbekova;
+package ulykbekova.hw.too;
 
 public class Rectangle {
     double side;
-
     public Rectangle(double side){
         this.side=side;
     }
