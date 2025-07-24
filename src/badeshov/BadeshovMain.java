@@ -1,22 +1,39 @@
 package badeshov;
 
+import badeshov.hw3.AbstractConvert;
 import badeshov.hw3.CtoF;
 import badeshov.hw3.KtoM;
 import badeshov.hw3.KtoP;
 
+import java.util.Scanner;
+
 public class BadeshovMain {
-    public static void main (String[] args) {
-        KtoP convert3 = new KtoP();
-        convert3.convertKP();
-//        KtoM convert2 = new KtoM();
-//        convert2.convertKM();
-//        CtoF convert1 = new CtoF();
-//        convert1.convertCF();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Введите единицу конвертации: Celsius - C; Kilometer - km; Kilogram - kg");
+            String v = scanner.next();
+            switch (v) {
+                case "C": {
+                    AbstractConvert convert = new CtoF();
+                    convert.convertation();
+                    break;
+                }
+                case "km": {
+                    AbstractConvert convert = new KtoM();
+                    convert.convertation();
+                    break;
+                }
+                case "kg": {
+                    AbstractConvert convert = new KtoP();
+                    convert.convertation();
+                    break;
+                }
+                default:
+                    System.out.println("Правильные запросы: или C, или km, или kg");
+                    break;
+            }
+        }
     }
 }
-
-/*
-в консоли (System.out.println) какие единицы измерения она может конвертировать
-давать выбор во что конвертировать значение
-После распечатки, программа должна спрашивать, хочет ли пользователь продолжить конвертацию, или нет.
- */

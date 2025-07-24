@@ -3,8 +3,9 @@ package badeshov.hw3;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class CtoF {
-    public void convertCF() {
+public class CtoF extends AbstractConvert {
+    @Override
+    public void convertation() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -12,6 +13,7 @@ public class CtoF {
             double c = scanner.nextDouble();
             double t = c * 9 / 5;
             double f = t + 32;
+            super.printConvertation(f);
             System.out.println("Fahrenheit: " + f);
             PrintStream format = System.out.format("Fahrenheit: " + "%.2f", f);
             System.out.println();
@@ -27,7 +29,7 @@ public class CtoF {
             }
         }
     }
-}
-/*
 
- */
+    @Override
+    String getValue() { return "Celsius to Fahrenheit"; }
+}

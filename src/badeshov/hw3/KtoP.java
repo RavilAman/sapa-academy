@@ -3,14 +3,16 @@ package badeshov.hw3;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class KtoP {
-    public void convertKP() {
+public class KtoP extends AbstractConvert {
+    @Override
+    public void convertation() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Kilogram: ");
             double k = scanner.nextDouble();
             double p = k * 2.20;
+            super.printConvertation(p);
             System.out.println("Pound: " + p);
             PrintStream format = System.out.format("Pound: " + "%.2f", p);
             System.out.println();
@@ -19,11 +21,13 @@ public class KtoP {
             String r = scanner.next();
             if (r.equals("1")) {
                 continue;
-            }
-            else {
+            } else {
                 System.out.println("Рад помочь!");
                 break;
             }
         }
     }
+
+    @Override
+    String getValue() { return "Kilogram to Pound"; }
 }
