@@ -1,9 +1,9 @@
-package ulykbekova.hw.too;
+package ulykbekova.hw.two;
 
 public class Square {
     double a;
     double b;
-    public Square(double a, double b){ // konst
+    public Square(double a, double b){
         this.a=a;
         this.b=b;
 

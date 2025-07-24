@@ -1,11 +1,11 @@
-package ulykbekova.hw.too;
+package ulykbekova.hw.two;
 
 public class Triangle {
     double a;
     double b;
-    double c; //polya
+    double c;
 
-    public Triangle(double a, double b, double c){ // konst
+    public Triangle(double a, double b, double c){
         this.a=a;
         this.b=b;
         this.c=c;

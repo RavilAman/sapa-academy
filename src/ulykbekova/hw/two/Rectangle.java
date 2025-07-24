@@ -1,4 +1,4 @@
-package ulykbekova.hw.too;
+package ulykbekova.hw.two;
 
 public class Rectangle {
     double side;

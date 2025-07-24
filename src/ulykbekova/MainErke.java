@@ -1,8 +1,8 @@
 package ulykbekova;
 
-import ulykbekova.hw.too.Rectangle;
-import ulykbekova.hw.too.Square;
-import ulykbekova.hw.too.Triangle;
+import ulykbekova.hw.two.Rectangle;
+import ulykbekova.hw.two.Square;
+import ulykbekova.hw.two.Triangle;
 
 public class MainErke {
     public static void main(String[] args){
