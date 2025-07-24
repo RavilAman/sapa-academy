@@ -1,16 +1,25 @@
 package badeshov.hw3;
 
+import java.util.Scanner;
+
 public abstract class AbstractConvert implements Convert {
 
-    public void printConvertation(double f) {
-        System.out.println("Convertation of " + getValue() + f);
+    public void printConversion(double convertedValue) {
+        System.out.format("Conversion of " + getUnitOfMeasurement() + ": %.2f\n", convertedValue);
     }
 
-    abstract String getValue();
+    public double readValue() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Введите значение для конвертации:");
+            if (scanner.hasNextDouble()) {
+                return scanner.nextDouble();
+            } else {
+                System.out.println("Ошибка!!! Введите число!");
+            }
+            scanner.next();
+        }
+    }
+
+    abstract String getUnitOfMeasurement();
 }
-/*
-[ ] При попытке ввода пользователем неправильной единицы конвертации, то есть не из списка возможных, программа должна вывести ошибку
-что так делать нельзя, и запросить заново во что хочет пользователь конвертировать свое значение.
-[ ] В последних двух пунктах у вас стоит задача остановить выполнение текущей итерации цикла на том месте
-где вы проверяете на ошибку и если эта ошибка присутствует вам надо начать новую итерацию цикла
- */

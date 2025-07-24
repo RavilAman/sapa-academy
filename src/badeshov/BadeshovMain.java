@@ -34,6 +34,13 @@ public class BadeshovMain {
                     System.out.println("Правильные запросы: или C, или km, или kg");
                     break;
             }
+
+            System.out.println("Если хотите продолжить, нажмите на 1");
+            String r = scanner.next();
+            if(!r.equals("1")) {
+                System.out.println("Рад помочь!");
+                break;
+            }
         }
     }
 }
