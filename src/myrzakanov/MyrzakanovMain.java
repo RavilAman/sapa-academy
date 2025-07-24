@@ -1,5 +1,6 @@
 package myrzakanov;
 
+import myrzakanov.hw2.*;
 import myrzakanov.hw3.*;
 
 import java.util.Scanner;
@@ -48,7 +49,7 @@ public class MyrzakanovMain {
 
 
 
-
+//
 //        Triangle answer1 = new Triangle(4,5,6);
 //        System.out.println("Perimeter of triangle = "+answer1.perimeterOfTriangle);
 //        System.out.println("Area of triangle = "+answer1.areaOfTriangle);

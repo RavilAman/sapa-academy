@@ -1,4 +1,4 @@
-package myrzakanov;
+package myrzakanov.hw2;
 
 public class Rectangle {
     public double perimeterOfRectangle;
