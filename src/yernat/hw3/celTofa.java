@@ -1,17 +1,17 @@
 package yernat.hw3;
 
-public class CeltoFa extends AbstractConvert{
+public class celTofa extends AbstractConvert{
 
     @Override
     public double convert(double celcius) {
-        double faranheit = 32;
-        double celTofar = celcius * faranheit;
+        double fahrenheit = 32;
+        double celTofar = celcius * fahrenheit;
 
         return celTofar;
     }
 
     @Override
     String getConvertName() {
-        return "CeltoFa";
+        return "celTofa";
     }
 }

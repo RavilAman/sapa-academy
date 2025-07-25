@@ -1,6 +1,6 @@
 package yernat.hw3;
 
-public class KmtoMile extends AbstractConvert{
+public class kmTomile extends AbstractConvert{
 
     @Override
     public double convert(double km) {
@@ -13,6 +13,6 @@ public class KmtoMile extends AbstractConvert{
 
     @Override
     String getConvertName() {
-        return "KmtoMile";
+        return "kmTomile";
     }
 }

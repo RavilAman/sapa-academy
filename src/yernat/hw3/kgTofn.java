@@ -1,6 +1,6 @@
 package yernat.hw3;
 
-public class KgtoFn extends AbstractConvert{
+public class kgTofn extends AbstractConvert{
 
     @Override
     public double convert(double kg) {
@@ -13,6 +13,6 @@ public class KgtoFn extends AbstractConvert{
 
     @Override
     String getConvertName() {
-        return "KgtoFn";
+        return "kgToFn";
     }
 }

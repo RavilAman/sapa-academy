@@ -1,9 +1,9 @@
 package yernat;
 
 import yernat.hw3.AbstractConvert;
-import yernat.hw3.CeltoFa;
-import yernat.hw3.KgtoFn;
-import yernat.hw3.KmtoMile;
+import yernat.hw3.celTofa;
+import yernat.hw3.kgTofn;
+import yernat.hw3.kmTomile;
 
 import java.util.Scanner;
 
@@ -22,11 +22,11 @@ public class TurarbekovMain {
             AbstractConvert converter = null;
 
             if (choice.equals("celsiusToFahrenheit")) {
-                converter = new CeltoFa();
+                converter = new celTofa();
             } else if (choice.equals("kilometerToMile")) {
-                converter = new KmtoMile();
+                converter = new kmTomile();
             } else if (choice.equals("kilogramToPound")) {
-                converter = new KgtoFn();
+                converter = new kgTofn();
             } else {
                 System.out.println("Error, wrong type of conversion, bro.");
                 continue;
