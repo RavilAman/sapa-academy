@@ -12,4 +12,9 @@ public class DOSS extends Parent {
     public String getCourse() {
         return this.course;
     }
+
+    @Override
+    public String getName() {
+        return "Your boss is " + super.getName();
+    }
 }
