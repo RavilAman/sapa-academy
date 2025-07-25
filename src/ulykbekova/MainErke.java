@@ -1,36 +1,34 @@
 package ulykbekova;
 
-import ulykbekova.hw.three.AbstraktConvert;
-import ulykbekova.hw.three.CofF;
-import ulykbekova.hw.three.Kilooffunt;
-import ulykbekova.hw.three.Kiloofmil;
+import ulykbekova.hw.three.AbstractConvert;
+import ulykbekova.hw.three.CelsiusOfFahrenheit;
+import ulykbekova.hw.three.KilogramOfFunt;
+import ulykbekova.hw.three.KilometrOfMil;
 
 import java.util.Scanner;
 
 public class MainErke {
     public static void main(String[] arsg) {
         Scanner scanner = new Scanner(System.in);
-        AbstraktConvert converter;
+        AbstractConvert converter;
         System.out.println("Что вы хотите конвертировать?");
         while (true) {
             System.out.println("Введите цифру 1/2/3");
             System.out.println("1. Цельсий в Фаренгейт");
             System.out.println("2. Километры в мили");
-            System.out.println("3. Кмлограммы в фунты");
-
-
+            System.out.println("3. Килограммы в фунты");
             String input = scanner.nextLine();
             switch (input) {
                 case "1":
-                    converter = new CofF();
+                    converter = new CelsiusOfFahrenheit();
                     converter.runConvert("Цельция", "Фарангейт");
                     break;
                 case "2":
-                    converter = new Kiloofmil();
+                    converter = new KilometrOfMil();
                     converter.runConvert("Километр", "Миль");
                     break;
                 case "3":
-                    converter = new Kilooffunt();
+                    converter = new KilogramOfFunt();
                     converter.runConvert("Килограмм", "Фунтов");
                     break;
                 default:
@@ -50,9 +48,6 @@ public class MainErke {
                     System.out.println("Ошибка: введите правильный диапазон");
                 }
             }
-
         }
-
-
     }
 }
