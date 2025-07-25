@@ -17,4 +17,9 @@ public class Parent {
     public int getAge() {
         return this.age;
     }
+
+    @Override
+    public String toString() {
+        return "Parent {name = " + this.name + " age = " + this.age + " } ";
+    }
 }
