@@ -1,4 +1,4 @@
-package myrzakanov;
+package myrzakanov.hw2;
 import static java.lang.Math.sqrt;
 
 public class Triangle {
