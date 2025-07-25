@@ -10,7 +10,7 @@ public class Test {
   public static void main(String[] args) {
 
     while (true) {
-      logger.severe("Start to calculate");
+      logger.info("Start to calculate");
       Scanner scanner = new Scanner(System.in);
       String input1 = scanner.next();
       String input2 = scanner.next();
