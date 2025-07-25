@@ -1,46 +1,33 @@
 package yernat;
 
-import yernat.hw3.AbstractConvert;
-import yernat.hw3.celTofa;
-import yernat.hw3.kgTofn;
-import yernat.hw3.kmTomile;
-
-import java.util.Scanner;
+import yernat.hw4.LittleSister;
+import yernat.hw4.Sister;
+import yernat.hw4.Yernat;
+import yernat.hw4.Parent;
 
 public class TurarbekovMain {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("\nChoose a type of conversion:");
-            System.out.println(" - celsiusToFahrenheit");
-            System.out.println(" - kilometerToMile");
-            System.out.println("- kilogramToPound");
-            System.out.print("Vvod: ");
+        Parent parent1 = new Parent("Father", 45);
+        Parent parent2 = new Parent("Mother", 43);
+        Yernat yernat = new Yernat("Yernat", 20, "Software engineer");
+        Sister sister = new Sister("Alinaz", 15, 10);
+        LittleSister littleSister = new LittleSister("Aknaz", 3, "Barbie");
 
-            String choice = scanner.nextLine();
-            AbstractConvert converter = null;
+        Parent[] family = new Parent[]{parent1, parent2, yernat, sister, littleSister};
 
-            if (choice.equals("celsiusToFahrenheit")) {
-                converter = new celTofa();
-            } else if (choice.equals("kilometerToMile")) {
-                converter = new kmTomile();
-            } else if (choice.equals("kilogramToPound")) {
-                converter = new kgTofn();
-            } else {
-                System.out.println("Error, wrong type of conversion, bro.");
-                continue;
+        for (Parent p : family){
+            System.out.print("Name: " + p.getName() + ", Age = "+ p.getAge() + " ");
+
+            if (p instanceof Yernat){
+                System.out.print(", Profession: " + ((Yernat) p).getProfession());
+            } if (p instanceof Sister){
+                System.out.print(", Grade: " + ((Sister) p).getGrade());
+            }if (p instanceof LittleSister){
+                System.out.println(", Toy: " + ((LittleSister) p).getToy());
             }
 
-            converter.execute();
-
-            System.out.print("Do u wanna continue? (yes/no): ");
-            String again = scanner.nextLine().toLowerCase();
-
-            if (!again.equals("yes")) {
-                System.out.println("Bye-bye baby!");
-                break;
-            }
+            System.out.println();
         }
     }
 }
