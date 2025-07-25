@@ -14,7 +14,6 @@ public class Main {
 
         mySquare.getPerimeter();
         mySquare.getArea();
-
     }
 }
 
