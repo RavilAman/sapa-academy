@@ -2,15 +2,18 @@ package ulykbekova.hw.two;
 
 public class Rectangle {
     double side;
-    public Rectangle(double side){
-        this.side=side;
+
+    public Rectangle(double side) {
+        this.side = side;
     }
-    public void getPerimetr(){
-        double perimetr = side*4;
+
+    public void getPerimetr() {
+        double perimetr = side * 4;
         System.out.println(perimetr);
     }
-    public void getAudan(){
-        double audan = side*side;
+
+    public void getAudan() {
+        double audan = side * side;
         System.out.println(audan);
     }
 }
