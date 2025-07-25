@@ -11,9 +11,8 @@ public class Square {
     public void getPerimeter(){
         double plus = a + a;
         System.out.println(plus);
-
-
     }
+
     public void getArea(){
         double multiple = a * a;
         System.out.println(multiple);

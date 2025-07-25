@@ -9,13 +9,11 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-
     }
 
     public void getPerimeter(){
         double plus = a + b + c;
         System.out.println(plus);
-
     }
     public void getArea(){
         double d = (a+b+c)/2;
