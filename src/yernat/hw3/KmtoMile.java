@@ -6,9 +6,9 @@ public class KmtoMile extends AbstractConvert{
     public double convert(double km) {
 
         double mile = 0.621371;
-        double KmtoMile = km * mile;
+        double kmTomile = km * mile;
 
-        return KmtoMile;
+        return kmTomile;
     }
 
     @Override

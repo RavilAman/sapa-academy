@@ -17,7 +17,7 @@ public abstract class AbstractConvert implements Convert{
             try {
                 value = Double.parseDouble(input);
                 break;
-            } catch (NumberFormatException smth) {
+            } catch (NumberFormatException e) {
                 System.out.println("Error, only numbers bro.");
             }
         }

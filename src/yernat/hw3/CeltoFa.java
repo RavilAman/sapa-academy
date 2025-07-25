@@ -4,11 +4,10 @@ public class CeltoFa extends AbstractConvert{
 
     @Override
     public double convert(double celcius) {
-
         double faranheit = 32;
-        double CeltoFar = celcius * faranheit;
+        double celTofar = celcius * faranheit;
 
-        return CeltoFar;
+        return celTofar;
     }
 
     @Override

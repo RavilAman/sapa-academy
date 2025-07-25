@@ -6,9 +6,9 @@ public class KgtoFn extends AbstractConvert{
     public double convert(double kg) {
 
         double pound = 2.20462;
-        double KgtoPound = kg * pound;
+        double kgTopound = kg * pound;
 
-        return KgtoPound;
+        return kgTopound;
     }
 
     @Override
