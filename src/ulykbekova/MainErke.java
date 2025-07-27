@@ -1,53 +1,34 @@
 package ulykbekova;
 
-import ulykbekova.hw.three.AbstractConvert;
-import ulykbekova.hw.three.CelsiusOfFahrenheit;
-import ulykbekova.hw.three.KilogramOfFunt;
-import ulykbekova.hw.three.KilometrOfMil;
 
-import java.util.Scanner;
+import ulykbekova.hw.four.Daughter1;
+import ulykbekova.hw.four.Daughter2;
+import ulykbekova.hw.four.Mother;
+import ulykbekova.hw.four.Parent;
 
 public class MainErke {
-    public static void main(String[] arsg) {
-        Scanner scanner = new Scanner(System.in);
-        AbstractConvert converter;
-        System.out.println("Что вы хотите конвертировать?");
-        while (true) {
-            System.out.println("Введите цифру 1/2/3");
-            System.out.println("1. Цельсий в Фаренгейт");
-            System.out.println("2. Километры в мили");
-            System.out.println("3. Килограммы в фунты");
-            String input = scanner.nextLine();
-            switch (input) {
-                case "1":
-                    converter = new CelsiusOfFahrenheit();
-                    converter.runConvert("Цельция", "Фарангейт");
-                    break;
-                case "2":
-                    converter = new KilometrOfMil();
-                    converter.runConvert("Километр", "Миль");
-                    break;
-                case "3":
-                    converter = new KilogramOfFunt();
-                    converter.runConvert("Килограмм", "Фунтов");
-                    break;
-                default:
-                    System.out.println("Ошибка, выберите цифру из заданного диапазона");
-                    continue;
+
+    public static void main(String[] args) {
+
+        Parent parent = new Parent("Када", 55);
+        Daughter1 erke = new Daughter1("Гулим", 19, "Учитель");
+        Daughter2 gul = new Daughter2("Еркежан", 25, "2");
+        Mother mama = new Mother("Нургуль", 54, "Камри");
+
+         Parent[] family = new Parent[]{parent, erke, gul, mama};
+        for (Parent p : family) {
+            System.out.print(p.toString());
+            if (p instanceof Daughter1) {
+                System.out.print(" профессия = ");
+                System.out.print(((Daughter1) p).getProfesion());
+            } else if (p instanceof Daughter2) {
+                System.out.print(" дети= ");
+                System.out.print(((Daughter2) p).getChild());
+            } else if (p instanceof Mother) {
+                System.out.print(" машина = ");
+                System.out.print(((Mother) p).getCar());
             }
-            System.out.println("Хотите продолжить?");
-            while (true) {
-                System.out.println(" да/нет");
-                String input2 = scanner.nextLine();
-                if (input2.equals("да")) {
-                    break;
-                } else if (input2.equals("нет")) {
-                    System.out.println("программа завершена");
-                    System.exit(0);
-                } else {
-                    System.out.println("Ошибка: введите правильный диапазон");
-                }
-            }
+            System.out.println();
         }
     }
 }
