@@ -4,9 +4,8 @@ public class KtoM extends AbstractConvert {
 
     @Override
     public void convertation() {
-        double k = super.readValue();
-        double m = k * 0.62;
-        super.printConversion(m);
+        double k = super.readValue() * 0.62;
+        super.printConversion(k);
     }
 
     @Override
