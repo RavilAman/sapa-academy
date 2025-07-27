@@ -2,7 +2,7 @@ package tursynbayev;
 
 import java.util.Scanner;
 
-public class app {
+public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
