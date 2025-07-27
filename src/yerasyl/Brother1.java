@@ -1,14 +1,14 @@
 package yerasyl;
 
 public class Brother1 extends Parent{
-    private String Achieve;
-    public Brother1(String name, int age, String Achive){
+    private String achieve;
+    public Brother1(String name, int age, String achieve){
         super(name,age);
-        this.Achieve = Achive;
+        this.achieve = achieve;
     }
 
-    public void getAchieve(){
-        System.out.println("He is professional "+Achieve+" athlete");
+    public String getAchieve(){
+        return achieve;
 
     }
 }

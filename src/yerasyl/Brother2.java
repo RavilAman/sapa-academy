@@ -7,7 +7,7 @@ public class Brother2 extends Parent{
         this.dohobby = dohobby;
     }
 
-    public void dohobby(){
-        System.out.println("He loves to play "+dohobby);
+    public String dohobby(){
+        return dohobby;
     }
 }

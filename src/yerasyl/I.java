@@ -1,13 +1,13 @@
 package yerasyl;
 
 public class I extends Parent{
-    private String Edu;
-    public I(String name, int age, String Edu){
+    private String edu;
+    public I(String name, int age, String edu){
         super(name,age);
-        this.Edu = Edu;
+        this.edu = edu;
     }
 
-    public void getEdu(){
-        System.out.println("He studies in "+Edu);
+    public String getEdu(){
+       return edu;
     }
 }

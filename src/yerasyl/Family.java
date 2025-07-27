@@ -10,12 +10,13 @@ public class Family {
             System.out.println("Name:"+ member.getName());
             System.out.println("Age:"+member.getAge());
             if (member instanceof I) {
-                ((I) member).getEdu();
+                System.out.println("Education: " + ((I) member).getEdu());
             } else if (member instanceof Brother1) {
-                ((Brother1) member).getAchieve();
+                System.out.println("Achievements: " + ((Brother1) member).getAchieve()+" kms");
             } else if (member instanceof Brother2) {
-                ((Brother2) member).dohobby();
+                System.out.println("Hobby: " + ((Brother2) member).dohobby());
             }
+
         }
     }
 }
