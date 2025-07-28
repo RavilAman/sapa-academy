@@ -17,36 +17,38 @@ public class MainErke {
     private static  Logger logger=Logger.getLogger(MainErke.class.getName());
     public static void main(String[] arsg) {
         Scanner scanner=new Scanner(System.in);
+        Scanner scanner1=new Scanner(System.in);
         Random random = new Random();
         logger.info("Start to drive");
-
+        logger.info("Введите мару машины:");
+        String name=scanner1.nextLine();
         while (true){
             logger.info("Залейте бензин:");
             int fuel=scanner.nextInt();
 
             boolean engineBroken= random.nextBoolean();
-            Car car = new Car(fuel, engineBroken);
+            Car car = new Car(fuel, engineBroken, name);
             try {
                 drive(car);
             } catch (FuelEmptyException e){
                 logger.info(e.getMessage());
-                while (true ){
                     logger.info("Хотите заправиться или завершить? refuel/stop ");
                     String otvet = scanner.next();
                     if (otvet.equals("refuel")) {
-                        break;
+                        continue;
 
                     } else if (otvet.equals("stop")) {
                         logger.info("Finish");
                         break;
 
+
                     } else {
                         logger.info("ответ не верный");
-                        continue;
+                        break;
                     }
-                }
+
             }catch (EngineBrokenException e){
-                logger.info("❗ Мотор неисправен!");
+                logger.info(e.getMessage());
                 break;
             }
 

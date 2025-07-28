@@ -9,9 +9,13 @@ public class Car {
     public static Logger logger = Logger.getLogger(Car.class.getName());
 
 
-    public  Car (int fuel, boolean engineBroken) {
+    public  Car (int fuel, boolean engineBroken, String name) {
         this.fuel = fuel;
         this.engineBroken=engineBroken;
+        this.name=name;
+    }
+    public String getName(){
+        return name;
     }
     public int getFuel() {
         return fuel;
@@ -22,21 +26,20 @@ public class Car {
     public void setFuel(int a){
         this.fuel=a;
     }
-    public void setEngineBroken(boolean engineBroken){
-        this.engineBroken=engineBroken;
-    }
+
     public static void drive(Car car) throws EngineBrokenException, FuelEmptyException{
-      logger.info("Car fuel "+ " "+ car.getFuel());
+
         while (car.getFuel()>0){
-            car.setFuel(car.getFuel()-1);
             logger.info("Car fuel "+ " "+ car.getFuel());
+            car.setFuel(car.getFuel()-1);
+
 
             if (car.isEngineBroken()){
-                throw new EngineBrokenException("❗ Мотор неисправен!");
+                throw new EngineBrokenException("На машине "+car.getName()+" ❗ Мотор неисправен!");
             }
 
             if (car.getFuel()==0){
-                throw  new FuelEmptyException("❗ Топливо закончилось! ");
+                throw  new FuelEmptyException("На машине "+car.getName()+" ❗ Топливо закончилось! ");
             }
         }
     }
