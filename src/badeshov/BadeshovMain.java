@@ -1,40 +1,63 @@
 package badeshov;
 
-import badeshov.hw4.Brother;
-import badeshov.hw4.DOSS;
-import badeshov.hw4.Parent;
-import badeshov.hw4.Sister;
+import badeshov.hw5.Car;
+import badeshov.hw5.EngineBrokenException;
+import badeshov.hw5.FuelEmptyException;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class BadeshovMain {
+
+    private static Logger logger = Logger.getLogger(Car.class.getName());
+
+    public static void drive(Car car) throws EngineBrokenException, FuelEmptyException {
+        for (int i = car.getFuel(); i >= 1; i = i - 1 ) {
+            logger.info("Car fuel: " + car.getFuel() + car.getName());
+
+            car.setFuel(car.getFuel() - 1);
+
+            if(car.getEngineBroken() ==  true) {
+                throw new EngineBrokenException("Мотор неисправен!" + car.getName());
+            }
+            if(car.getFuel() == 0) {
+                throw new FuelEmptyException("Топливо закончилось!" + car.getName());
+            }
+        }
+    }
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Parent parent = new Parent("Dad", 59);
-        Parent parent2 = new Parent("Mom", 57);
-        DOSS doss = new DOSS("DOSS", 23, "Java");
-        Sister sister = new Sister("Aru", 20, "Painting Arts");
-        Brother brother = new Brother("Rax", 26, "Master Engineer");
+        while (true) {
+            logger.info("Залейте бензин: ");
+            int fuelDegree = scanner.nextInt();
+            Random rd = new Random();
 
-        Parent[] family = new Parent[]{parent, parent2, doss, sister, brother};
+            Car car = new Car("Volkswagen", fuelDegree, rd.nextBoolean());
 
-        for (Parent p : family) {
-            System.out.print(p.toString());
-
-            if (p instanceof DOSS) {
-                System.out.print(" ");
-                System.out.print(((DOSS) p).getCourse());
+            try {
+                drive(car);
+            } catch (FuelEmptyException e) {
+                logger.info("Error message of fuel degree: " + e.getMessage());
+            } catch (EngineBrokenException e) {
+                logger.info("Error message of engine: " + e.getMessage());
+                break;
             }
 
-            if (p instanceof Sister) {
-                System.out.print(" ");
-                System.out.print(((Sister) p).getHobby());
+            logger.info("Хотите заправиться или завершить? (refuel/stop): ");
+            String rs = scanner.next();
+            if(rs.equals("refuel")) {
+                continue;
+            } else if(rs.equals("stop")) {
+                break;
             }
-
-            if (p instanceof Brother) {
-                System.out.print(" ");
-                System.out.print(((Brother) p).getProfession());
+            else {
+                logger.info("Напиши refuel или stop безошибочно");
             }
+            scanner.next();
 
-            System.out.println();
+
         }
     }
 }
