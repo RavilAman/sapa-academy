@@ -1,34 +1,76 @@
 package ulykbekova;
 
+import ulykbekova.hw.five.Car;
+import ulykbekova.hw.five.EngineBrokenException;
+import ulykbekova.hw.five.FuelEmptyException;
 
-import ulykbekova.hw.four.Daughter1;
-import ulykbekova.hw.four.Daughter2;
-import ulykbekova.hw.four.Mother;
-import ulykbekova.hw.four.Parent;
+
+import java.lang.module.FindException;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.logging.Logger;
+
+import static ulykbekova.hw.five.Car.drive;
+
 
 public class MainErke {
+    private static  Logger logger=Logger.getLogger(MainErke.class.getName());
+    public static void main(String[] arsg) {
+        Scanner scanner=new Scanner(System.in);
+        Random random = new Random();
+        logger.info("Start to drive");
 
-    public static void main(String[] args) {
+        while (true){
+            logger.info("Залейте бензин:");
+            int fuel=scanner.nextInt();
 
-        Parent parent = new Parent("Када", 55);
-        Daughter1 erke = new Daughter1("Гулим", 19, "Учитель");
-        Daughter2 gul = new Daughter2("Еркежан", 25, "2");
-        Mother mama = new Mother("Нургуль", 54, "Камри");
+            boolean engineBroken= random.nextBoolean();
+            Car car = new Car(fuel, engineBroken);
+            try {
+                drive(car);
+            } catch (FuelEmptyException e){
+                logger.info(e.getMessage());
+                while (true ){
+                    logger.info("Хотите заправиться или завершить? refuel/stop ");
+                    String otvet = scanner.next();
+                    if (otvet.equals("refuel")) {
+                        break;
 
-         Parent[] family = new Parent[]{parent, erke, gul, mama};
-        for (Parent p : family) {
-            System.out.print(p.toString());
-            if (p instanceof Daughter1) {
-                System.out.print(" профессия = ");
-                System.out.print(((Daughter1) p).getProfesion());
-            } else if (p instanceof Daughter2) {
-                System.out.print(" дети= ");
-                System.out.print(((Daughter2) p).getChild());
-            } else if (p instanceof Mother) {
-                System.out.print(" машина = ");
-                System.out.print(((Mother) p).getCar());
+                    } else if (otvet.equals("stop")) {
+                        logger.info("Finish");
+                        break;
+
+                    } else {
+                        logger.info("ответ не верный");
+                        continue;
+                    }
+                }
+            }catch (EngineBrokenException e){
+                logger.info("❗ Мотор неисправен!");
+                break;
             }
-            System.out.println();
+
+//            while (true ){
+//                System.out.println("Prodolzhaem?");
+//                String otvet = scanner.next();
+//                if (otvet.equals("da")) {
+//                    break;
+//                } else if (otvet.equals("net")) {
+//                    System.out.println("Finish");
+//                    continue;
+//                } else {
+//                    System.out.println("ответ не верный");
+//                    continue;
+//                }
+//            }
+
+
+
         }
+
+
+
+
+
     }
 }
