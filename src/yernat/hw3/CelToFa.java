@@ -1,6 +1,6 @@
 package yernat.hw3;
 
-public class celTofa extends AbstractConvert{
+public class CelToFa extends AbstractConvert{
 
     @Override
     public double convert(double celcius) {
