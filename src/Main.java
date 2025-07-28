@@ -1,5 +1,5 @@
-import example.lesson.four.AbstractPolygon;
-import example.lesson.four.Rectangle;
+import example.lesson4.AbstractPolygon;
+import example.lesson4.Rectangle;
 
 public class Main {
 

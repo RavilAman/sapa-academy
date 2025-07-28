@@ -1,46 +1,40 @@
 package badeshov;
 
-import badeshov.hw3.AbstractConvert;
-import badeshov.hw3.CtoF;
-import badeshov.hw3.KtoM;
-import badeshov.hw3.KtoP;
-
-import java.util.Scanner;
+import badeshov.hw4.Brother;
+import badeshov.hw4.DOSS;
+import badeshov.hw4.Parent;
+import badeshov.hw4.Sister;
 
 public class BadeshovMain {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("Введите единицу конвертации: Celsius - C; Kilometer - km; Kilogram - kg");
-            String v = scanner.next();
-            switch (v) {
-                case "C": {
-                    AbstractConvert convert = new CtoF();
-                    convert.convertation();
-                    break;
-                }
-                case "km": {
-                    AbstractConvert convert = new KtoM();
-                    convert.convertation();
-                    break;
-                }
-                case "kg": {
-                    AbstractConvert convert = new KtoP();
-                    convert.convertation();
-                    break;
-                }
-                default:
-                    System.out.println("Правильные запросы: или C, или km, или kg");
-                    break;
+        Parent parent = new Parent("Dad", 59);
+        Parent parent2 = new Parent("Mom", 57);
+        DOSS doss = new DOSS("DOSS", 23, "Java");
+        Sister sister = new Sister("Aru", 20, "Painting Arts");
+        Brother brother = new Brother("Rax", 26, "Master Engineer");
+
+        Parent[] family = new Parent[]{parent, parent2, doss, sister, brother};
+
+        for (Parent p : family) {
+            System.out.print(p.toString());
+
+            if (p instanceof DOSS) {
+                System.out.print(" ");
+                System.out.print(((DOSS) p).getCourse());
             }
 
-            System.out.println("Если хотите продолжить, нажмите на 1");
-            String r = scanner.next();
-            if(!r.equals("1")) {
-                System.out.println("Рад помочь!");
-                break;
+            if (p instanceof Sister) {
+                System.out.print(" ");
+                System.out.print(((Sister) p).getHobby());
             }
+
+            if (p instanceof Brother) {
+                System.out.print(" ");
+                System.out.print(((Brother) p).getProfession());
+            }
+
+            System.out.println();
         }
     }
 }
