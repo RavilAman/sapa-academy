@@ -14,7 +14,7 @@ public class TurarbekovMain {
         Random random = new Random();
         final Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
 
-        logger.info("Start to drive");
+        logger.info("Start  to drive");
 
         while (true) {
            logger.info("Залейте бензин: ");
