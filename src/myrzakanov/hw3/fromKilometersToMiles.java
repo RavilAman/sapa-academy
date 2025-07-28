@@ -11,7 +11,5 @@ public class fromKilometersToMiles extends AbstractConverter{
         double convertEq = ( (a * 0.62137) - (a * 0.62137)%1e-2);
 
         System.out.println("There are "+convertEq+" miles in "+a+" kilometer ");
-
-
     }
 }
