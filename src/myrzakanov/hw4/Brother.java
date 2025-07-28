@@ -2,15 +2,15 @@ package myrzakanov.hw4;
 
 public class Brother extends Parent{
 
-    private String Sport;
+    private String sport;
 
-    public Brother(String name, int age, String Sport){
+    public Brother(String name, int age, String sport){
         super(name, age);
-        this.Sport = Sport;
+        this.sport = sport;
     }
 
     public String getSport(){
-        return this.Sport;
+        return this.sport;
     }
 
 }

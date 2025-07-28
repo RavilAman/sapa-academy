@@ -2,15 +2,15 @@ package myrzakanov.hw4;
 
 public class Twin extends Parent{
 
-    private String Profession;
+    private String profession;
 
-    public Twin(String name, int age, String Profession){
+    public Twin(String name, int age, String profession){
         super(name, age);
-        this.Profession = Profession;
+        this.profession = profession;
     }
 
     public String getProfession(){
-        return this.Profession;
+        return this.profession;
     }
 
     @Override

@@ -13,7 +13,6 @@ public class MyrzakanovMain {
             System.out.println("3) From kilogram to pound");
             System.out.println();
 
-
             Scanner scan = new Scanner(System.in);
             System.out.print("Select what you want to convert from the list above : ");
             String b = scan.nextLine();
