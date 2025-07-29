@@ -1,6 +1,6 @@
 package example.lesson4;
 
-public class Square extends AbstractPolygon {
+public class Square extends AbstractPolygon implements Comparable {
 
     @Override
     public double calculatePerimeter() {
@@ -25,5 +25,10 @@ public class Square extends AbstractPolygon {
     @Override
     String getFigureName() {
         return "Square";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
