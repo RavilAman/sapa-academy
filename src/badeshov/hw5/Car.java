@@ -3,7 +3,7 @@ package badeshov.hw5;
 public class Car {
     int fuel;
     String name;
-    boolean engineBroken;
+    private boolean engineBroken;
 
     public String getName() {
         return this.name;
