@@ -44,22 +44,15 @@ public class BadeshovMain {
                 break;
             }
 
-            logger.info("Хотите заправиться или завершить? (refuel/stop): ");
+            logger.info("(Если хотите заправиться напишите что-то) или (напишите stop для завершения): ");
             String rs = scanner.next();
             if (rs.equals("refuel")) {
                 continue;
             } else if (rs.equals("stop")) {
                 break;
-            } else {
-                logger.info("Напиши refuel или stop безошибочно");
-            }
-            if (rs.equals("refuel")) {
-                continue;
-            } else if (rs.equals("stop")) {
-                break;
-
-
             }
         }
+
+
     }
 }
