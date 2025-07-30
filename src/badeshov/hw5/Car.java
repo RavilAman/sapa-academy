@@ -1,8 +1,8 @@
 package badeshov.hw5;
 
 public class Car {
-    int fuel;
-    String name;
+    private int fuel;
+    private String name;
     private boolean engineBroken;
 
     public String getName() {
