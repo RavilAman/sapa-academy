@@ -1,58 +1,26 @@
 package badeshov;
 
-import badeshov.hw5.Car;
-import badeshov.hw5.EngineBrokenException;
-import badeshov.hw5.FuelEmptyException;
+import badeshov.hw6.ValueBox;
 
-import java.util.Random;
-import java.util.Scanner;
-import java.util.logging.Logger;
+import java.lang.reflect.Array;
 
 public class BadeshovMain {
 
-    private static final Logger logger = Logger.getLogger(Car.class.getName());
+    public static void main(String[] args) {
+        Array<Integer> List = new Array<>();
+        list.add(7);
+        list.add(9);
 
-    public static void drive(Car car) throws EngineBrokenException, FuelEmptyException {
-        for (int i = car.getFuel(); i >= 1; i = i - 1) {
-            logger.info("Car fuel: " + car.getFuel() + " " + car.getName());
+        ValueBox<Integer> vb = new ValueBox<>(T value);
+        int maxOfTheValue = vb.getValue().max();
+        ValueBox first = new ValueBox();
+        ValueBox second = new ValueBox();
 
-            car.setFuel(car.getFuel() - 1);
-
-            if (car.getEngineBroken() == true) throw new EngineBrokenException("Мотор неисправен!" + car.getName());
-            if (car.getFuel() == 0) {
-                throw new FuelEmptyException("Топливо закончилось!" + car.getName());
-            }
-        }
+        max(first, second);
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            logger.info("Залейте бензин: ");
-            int fuelDegree = scanner.nextInt();
-            Random rd = new Random();
-
-            Car car = new Car("Volkswagen", fuelDegree, rd.nextBoolean());
-
-            try {
-                drive(car);
-            } catch (FuelEmptyException e) {
-                logger.info("Error message of fuel degree: " + e.getMessage());
-            } catch (EngineBrokenException e) {
-                logger.info("Error message of engine: " + e.getMessage());
-                break;
-            }
-
-            logger.info("(Если хотите заправиться напишите что-то) или (напишите stop для завершения): ");
-            String rs = scanner.next();
-            if (rs.equals("refuel")) {
-                continue;
-            } else if (rs.equals("stop")) {
-                break;
-            }
-        }
-
-
+    public static <T extends Comparable<T>> T max(ValueBox<T> first, ValueBox<T> second) {
+        T max = (0 <= first.compareTo(second)) ? first : second;
+        return max;
     }
 }
