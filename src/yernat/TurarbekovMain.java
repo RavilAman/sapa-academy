@@ -9,10 +9,12 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class TurarbekovMain {
+
+    private static Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        final Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
 
         logger.info("Start  to drive");
 
@@ -47,7 +49,6 @@ public class TurarbekovMain {
     }
 
     public static void drive(Car car) throws FuelEmptyException {
-        final Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
 
         while (car.getFuel() >= 0) {
             if (car.isEngineBroken()) {
