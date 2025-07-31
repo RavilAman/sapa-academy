@@ -7,21 +7,11 @@ public class ValueBox<T> {
         this.value = value;
     }
 
-    public void setValueBox(T value) {
-        this.value = value;
-    }
-
     public T getValue() {
         return value;
     }
 
-    public boolean equals() {
-        if(true) {
-            return super.equals(value);
-        }
-    }
-
-    public int compareTo(ValueBox first, ValueBox<T> second) {
-        return 0;
+    public void setValue(T value) {
+        this.value = value;
     }
 }
