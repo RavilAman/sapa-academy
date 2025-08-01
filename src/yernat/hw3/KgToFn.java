@@ -1,18 +1,18 @@
 package yernat.hw3;
 
-public class kgTofn extends AbstractConvert{
+public class KgToFn extends AbstractConvert{
 
     @Override
     public double convert(double kg) {
 
         double pound = 2.20462;
-        double kgTopound = kg * pound;
+        double KgtoPound = kg * pound;
 
-        return kgTopound;
+        return KgtoPound;
     }
 
     @Override
     String getConvertName() {
-        return "kgToFn";
+        return "KgtoFn";
     }
 }
