@@ -5,8 +5,8 @@ import badeshov.hw6.ValueBox;
 public class BadeshovMain {
 
     public static void main(String[] args) {
-        ValueBox<Integer> first = new ValueBox<Integer>(23567);
-        ValueBox<Integer> second = new ValueBox<Integer>(342);
+        ValueBox<Integer> first = new ValueBox<Integer>(23566);
+        ValueBox<Integer> second = new ValueBox<Integer>(23568);
         System.out.println(max(first, second));
     }
 
@@ -14,6 +14,7 @@ public class BadeshovMain {
         int comparedValue = first.getValue().compareTo(second.getValue());
         switch(comparedValue) {
             case 0:
+                System.out.println("They are equal");
             case 1:
                 return first.getValue();
             case -1:
