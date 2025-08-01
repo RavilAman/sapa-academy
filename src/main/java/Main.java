@@ -1,3 +1,5 @@
+package main.java;
+
 import example.lesson4.AbstractPolygon;
 import example.lesson4.Rectangle;
 

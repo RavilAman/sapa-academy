@@ -1,6 +1,6 @@
-package example.lesson9;
+package example.lesson9.lesson;
 
-import example.lesson9.model.Student;
+import example.lesson9.lesson.model.Student;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,9 +12,8 @@ public class StudentReader {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
 
-
         // Чтение файла построчно
-        try (BufferedReader reader = new BufferedReader(new FileReader("resources/students.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/lesson9/lesson/students.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");

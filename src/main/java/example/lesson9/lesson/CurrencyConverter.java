@@ -1,6 +1,6 @@
-package example.lesson9;
+package example.lesson9.lesson;
 
-import example.lesson9.model.CurrencyItem;
+import example.lesson9.lesson.model.CurrencyItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

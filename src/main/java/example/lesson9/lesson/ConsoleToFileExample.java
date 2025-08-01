@@ -1,4 +1,4 @@
-package example.lesson9;
+package example.lesson9.lesson;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -16,7 +16,7 @@ public class ConsoleToFileExample {
         // Используем try-with-resources для автоматического закрытия потока
         try (
                 // FileWriter открывает файл (создаст, если нет)
-                FileWriter fileWriter = new FileWriter("resources/output.txt");
+                FileWriter fileWriter = new FileWriter("src/main/resources/lesson9/lesson/output.txt");
                 // BufferedWriter буферизует запись, ускоряя её
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
         ) {

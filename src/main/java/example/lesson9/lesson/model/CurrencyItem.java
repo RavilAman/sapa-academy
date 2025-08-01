@@ -1,4 +1,4 @@
-package example.lesson9.model;
+package example.lesson9.lesson.model;
 
 public class CurrencyItem {
     private String code;
