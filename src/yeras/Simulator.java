@@ -15,7 +15,6 @@ public class Simulator {
             String carname = scanner.nextLine();
             logger.info("Pour fuel:");
             int fuel = scanner.nextInt();
-            scanner.nextLine();
             boolean engineBroken = random.nextBoolean();
             Car car = new Car(fuel, carname, engineBroken);
             try {
@@ -39,8 +38,8 @@ public class Simulator {
             }
             int currentfuel = car.getFuel()-1;
             car.setFuel(currentfuel);
-            logger.info("Fuel left:" + currentfuel + " L");
+            logger.info("Fuel left in:" + car.getName() + currentfuel +  "L");
         }
-        logger.info("The fuel is out");
+        logger.info("The fuel is out in" + car.getName());
     }
 }
