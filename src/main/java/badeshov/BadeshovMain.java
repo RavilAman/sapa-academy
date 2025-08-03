@@ -16,14 +16,6 @@ public class BadeshovMain {
         while (true) {
             System.out.println("Введите товар (или /stop для завершения): ");
             String next = input.next();
-            pokupka.add(next);
-
-            for (int i = 0; i < pokupka.size(); i++) {
-                if (pokupka.get(i).equals("stop")) {
-                    pokupka.remove(i);
-                    i--;
-                }
-            }
 
             if (next.equals("stop")) {
                 HashMap<String, Integer> map = new HashMap<>();
@@ -45,6 +37,8 @@ public class BadeshovMain {
                     break;
                 }
             }
+
+            pokupka.add(next);
         }
     }
 }
