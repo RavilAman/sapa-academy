@@ -1,31 +1,50 @@
 package badeshov;
 
-import badeshov.hw6.ValueBox;
+import main.java.badeshov.hw7.SuperMarket;
+
+import java.util.*;
 
 public class BadeshovMain {
 
     public static void main(String[] args) {
-        ValueBox<Integer> first = new ValueBox<Integer>(23566);
-        ValueBox<Integer> second = new ValueBox<Integer>(23568);
-        System.out.println(max(first, second));
-    }
 
-    public static <T extends Comparable<T>> T max(ValueBox<T> first, ValueBox<T> second) {
-        int comparedValue = first.getValue().compareTo(second.getValue());
-        switch(comparedValue) {
-            case 0:
-                System.out.println("They are equal");
-            case 1:
-                return first.getValue();
-            case -1:
-                return second.getValue();
-            default:
-                throw new IllegalArgumentException("Invalid value: " + comparedValue);
+        Scanner input = new Scanner(System.in);
+
+        ArrayList<String> pokupka = new ArrayList<>();
+
+
+        while (true) {
+            System.out.println("Введите товар (или /stop для завершения): ");
+            String next = input.next();
+            pokupka.add(next);
+
+            for (int i = 0; i < pokupka.size(); i++) {
+                if (pokupka.get(i).equals("stop")) {
+                    pokupka.remove(i);
+                    i--;
+                }
+            }
+
+            if (next.equals("stop")) {
+                HashMap<String, Integer> map = new HashMap<>();
+                for (String s : pokupka) {
+                    if (map.containsKey(s)) {
+                        Integer i = map.get(s) + 1;
+                        map.put(s, i);
+                    } else {
+                        map.put(s, 1);
+                    }
+                }
+                System.out.println(map);
+
+                System.out.println("Хотите добавить ещё товары? (да/нет): ");
+                next = input.next();
+                if (next.equals("да")) {
+                    continue;
+                } else {
+                    break;
+                }
+            }
         }
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        return false;
     }
 }
