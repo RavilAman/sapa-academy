@@ -1,4 +1,4 @@
-package yernat;
+package main.java.yernat;
 
 import yernat.hw5.Car;
 import yernat.hw5.EngineBrokenException;
