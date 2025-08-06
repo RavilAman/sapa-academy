@@ -1,4 +1,4 @@
-package yernat.hw3;
+package main.java.yernat.yernat.hw3;
 
 public class kmTomile extends AbstractConvert{
 

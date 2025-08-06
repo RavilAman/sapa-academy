@@ -1,4 +1,4 @@
-package yernat.hw2;
+package main.java.yernat.yernat.hw2;
 
 public class Main {
     public static void main(String[] args){
