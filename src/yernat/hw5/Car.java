@@ -1,4 +1,4 @@
-package main.java.yernat.hw5;
+package yernat.hw5;
 
 public class Car {
     private int fuel;
