@@ -1,10 +1,11 @@
 package badeshov;
 
-import main.java.badeshov.hw7.SuperMarket;
-
 import java.util.*;
+import java.util.logging.Logger;
 
 public class BadeshovMain {
+
+    private static Logger logger = Logger.getLogger(BadeshovMain.class.getName());
 
     public static void main(String[] args) {
 
@@ -12,9 +13,8 @@ public class BadeshovMain {
 
         ArrayList<String> pokupka = new ArrayList<>();
 
-
         while (true) {
-            System.out.println("Введите товар (или /stop для завершения): ");
+            logger.info("Введите товар (или /stop для завершения): ");
             String next = input.next();
 
             if (next.equals("stop")) {
