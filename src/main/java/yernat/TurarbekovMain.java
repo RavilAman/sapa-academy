@@ -1,66 +1,24 @@
 package main.java.yernat;
 
-import main.java.yernat.hw5.Car;
-import main.java.yernat.hw5.EngineBrokenException;
-import main.java.yernat.hw5.FuelEmptyException;
-
-import java.util.Random;
-import java.util.Scanner;
+import yernat.hw6.ValueBox;
 import java.util.logging.Logger;
 
 public class TurarbekovMain {
-
     private static Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
+        ValueBox<Integer> box1 = new ValueBox<>(2005);
+        ValueBox<Integer> box2 = new ValueBox<>(2025);
 
-        logger.info("Start  to drive");
+        logger.info("Box1: " + box1.getValue());
+        logger.info("Box2: " + box2.getValue());
 
-        while (true) {
-           logger.info("Залейте бензин: ");
-            int fuel = scanner.nextInt();
+        logger.info("Are they equal? " + box1.isEqual(box2));
 
-            boolean engineBroken = random.nextBoolean();
-            Car car = new Car(fuel,"Kia k5", engineBroken);
+        box1.setValue(2025);
+        logger.info("Now, are they equal? " + box1.isEqual(box2));
 
-            try{
-                drive(car);
-            } catch (FuelEmptyException e) {
-                logger.info(e.getMessage());
-                logger.info("Хотите заправиться или завершить? (refuel/stop): ");
-                String choice = scanner.next();
-
-                if(choice.equals("stop")){
-                    logger.info("Finish to drive");
-                    break;
-                }else{
-                    logger.info("Finish to drive");
-                    continue;
-                }
-            }catch (EngineBrokenException e){
-                logger.info(e.getMessage());
-                logger.info("Finish to drive");
-                break;
-            }
-
-        }
-    }
-
-    public static void drive(Car car) throws FuelEmptyException {
-
-        while (car.getFuel() >= 0) {
-            if (car.isEngineBroken()) {
-                throw new EngineBrokenException("❗У моей машины " + car.getName() + " мотор неисправен!");
-            }
-
-            logger.info("Car fuel: " + car.getFuel());
-
-            if (car.getFuel() == 0) {
-                throw new FuelEmptyException("❗У моей машины " + car.getName() + " топливо закончилось!");
-            }
-            car.setFuel(car.getFuel() - 1);
-        }
+        Integer max = ValueBox.max(box1, box2);
+        logger.info("Max: " + max);
     }
 }
