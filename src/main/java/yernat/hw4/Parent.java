@@ -1,4 +1,4 @@
-package yernat.hw4;
+package main.java.yernat.yernat.hw4;
 
 public class Parent {
 
