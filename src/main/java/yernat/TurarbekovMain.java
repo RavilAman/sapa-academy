@@ -1,8 +1,8 @@
-package yernat;
+package main.java.yernat;
 
-import yernat.hw5.Car;
-import yernat.hw5.EngineBrokenException;
-import yernat.hw5.FuelEmptyException;
+import main.java.yernat.hw5.Car;
+import main.java.yernat.hw5.EngineBrokenException;
+import main.java.yernat.hw5.FuelEmptyException;
 
 import java.util.Random;
 import java.util.Scanner;

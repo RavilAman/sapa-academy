@@ -1,4 +1,4 @@
-package yernat.hw5;
+package main.java.yernat.hw5;
 
 public class FuelEmptyException extends Exception {
     public FuelEmptyException(String message){
