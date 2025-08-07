@@ -1,0 +1,6 @@
+City: Astana
+Date: 2025-08-12
+Time: 12:00
+Forecast: Partly Cloudy 
+Temperature: 20.0
+Wind: 13.2
