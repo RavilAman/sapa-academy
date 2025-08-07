@@ -1,24 +1,65 @@
 package main.java.yernat;
 
-import yernat.hw6.ValueBox;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class TurarbekovMain {
     private static Logger logger = Logger.getLogger(TurarbekovMain.class.getName());
 
     public static void main(String[] args) {
-        ValueBox<Integer> box1 = new ValueBox<>(2005);
-        ValueBox<Integer> box2 = new ValueBox<>(2025);
+        Scanner scanner = new Scanner(System.in);
 
-        logger.info("Box1: " + box1.getValue());
-        logger.info("Box2: " + box2.getValue());
+        List<String> shoppingList = new ArrayList<>();
+        HashMap<String, Integer> itemCount = new HashMap<>();
 
-        logger.info("Are they equal? " + box1.isEqual(box2));
+        while (true) {
+            logger.info("Введите товар (или /stop для завершения): ");
+            String item = scanner.nextLine();
 
-        box1.setValue(2025);
-        logger.info("Now, are they equal? " + box1.isEqual(box2));
+            if (item.equals("/stop")) {
+                break;
+            }
 
-        Integer max = ValueBox.max(box1, box2);
-        logger.info("Max: " + max);
+            if (!item.isEmpty()) {
+                shoppingList.add(item);
+                itemCount.put(item, itemCount.getOrDefault(item, 0) + 1);  // это я загуглил
+            }
+        }
+
+        logger.info("Результаты покупок: ");
+
+        for (Map.Entry<String, Integer> entry : itemCount.entrySet()) {  // тут тоже загуглил
+            logger.info(entry.getKey() + " - " + entry.getValue() + " шт.");
+        }
+
+        while (true) {
+            logger.info("Хотите добавить ещё товары? (да/нет): ");
+            String answer = scanner.nextLine();
+
+            if (answer.equals("да")) {
+                while (true) {
+                    logger.info("Введите товар (или /stop для завершения): ");
+                    String item = scanner.nextLine();
+
+                    if (item.equals("/stop")) {
+                        break;
+                    }
+
+                    if (!item.isEmpty()) {
+                        shoppingList.add(item);
+                        itemCount.put(item, itemCount.getOrDefault(item, 0) + 1);
+                    }
+                }
+
+                logger.info("Результаты покупок: ");
+
+                for (Map.Entry<String, Integer> entry : itemCount.entrySet()) {
+                    logger.info(entry.getKey() + " - " + entry.getValue() + " шт.");
+                }
+            } else {
+                logger.info("Спасибо за покупки!");
+                break;
+            }
+        }
     }
 }
