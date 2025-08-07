@@ -1,58 +1,44 @@
 package badeshov;
 
-import badeshov.hw5.Car;
-import badeshov.hw5.EngineBrokenException;
-import badeshov.hw5.FuelEmptyException;
-
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class BadeshovMain {
 
-    private static final Logger logger = Logger.getLogger(Car.class.getName());
-
-    public static void drive(Car car) throws EngineBrokenException, FuelEmptyException {
-        for (int i = car.getFuel(); i >= 1; i = i - 1) {
-            logger.info("Car fuel: " + car.getFuel() + " " + car.getName());
-
-            car.setFuel(car.getFuel() - 1);
-
-            if (car.getEngineBroken() == true) throw new EngineBrokenException("Мотор неисправен!" + car.getName());
-            if (car.getFuel() == 0) {
-                throw new FuelEmptyException("Топливо закончилось!" + car.getName());
-            }
-        }
-    }
+    private static Logger logger = Logger.getLogger(BadeshovMain.class.getName());
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
+        Scanner input = new Scanner(System.in);
+
+        ArrayList<String> pokupka = new ArrayList<>();
 
         while (true) {
-            logger.info("Залейте бензин: ");
-            int fuelDegree = scanner.nextInt();
-            Random rd = new Random();
+            logger.info("Введите товар (или /stop для завершения): ");
+            String next = input.next();
 
-            Car car = new Car("Volkswagen", fuelDegree, rd.nextBoolean());
+            if (next.equals("stop")) {
+                HashMap<String, Integer> map = new HashMap<>();
+                for (String s : pokupka) {
+                    if (map.containsKey(s)) {
+                        Integer i = map.get(s) + 1;
+                        map.put(s, i);
+                    } else {
+                        map.put(s, 1);
+                    }
+                }
+                System.out.println(map);
 
-            try {
-                drive(car);
-            } catch (FuelEmptyException e) {
-                logger.info("Error message of fuel degree: " + e.getMessage());
-            } catch (EngineBrokenException e) {
-                logger.info("Error message of engine: " + e.getMessage());
-                break;
+                System.out.println("Хотите добавить ещё товары? (да/нет): ");
+                next = input.next();
+                if (next.equals("да")) {
+                    continue;
+                } else {
+                    break;
+                }
             }
 
-            logger.info("(Если хотите заправиться напишите что-то) или (напишите stop для завершения): ");
-            String rs = scanner.next();
-            if (rs.equals("refuel")) {
-                continue;
-            } else if (rs.equals("stop")) {
-                break;
-            }
+            pokupka.add(next);
         }
-
-
     }
 }
