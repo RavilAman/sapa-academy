@@ -3,8 +3,8 @@ package tursynbayev;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class Starter {
-    private static final Logger logger = Logger.getLogger(Starter.class.getName());
+public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         logger.info("Enter numbers to box:");
