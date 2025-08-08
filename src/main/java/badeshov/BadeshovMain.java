@@ -83,7 +83,7 @@ public class BadeshovMain {
         ForecastDay day = getForeCastDay(inputDate, forecastDays);
         Thread newThread = new Thread(String.valueOf(day));
         newThread.start();
-        System.out.println("Сетевой запрос");
+        System.out.println("Сетевой запрос в " + Thread.currentThread().getName());
         System.out.println(day);
         List<Hour> hours = day.hour;
         Hour hour = getHour(inputTime, hours);
@@ -100,7 +100,7 @@ public class BadeshovMain {
 
         Thread newThread2 = new Thread(input);
         newThread2.start();
-        System.out.println("Запись информации");
+        System.out.println("Запись информации в "  + Thread.currentThread().getName());
         writeToFile(input);
     }
 
