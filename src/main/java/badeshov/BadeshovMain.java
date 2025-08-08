@@ -1,5 +1,6 @@
 package badeshov;
 
+import badeshov.hw9.MyThread;
 import example.lesson9.hw.model.ForecastDay;
 import example.lesson9.hw.model.Hour;
 import example.lesson9.hw.model.WeatherResponse;
@@ -9,8 +10,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -78,13 +77,20 @@ public class BadeshovMain {
         WeatherDataService service = new WeatherDataService();
         WeatherResponse response = service.getWeatherData(API_KEY, city, days);
 
+//        Thread t1 = new MyThread("Сетевой запрос..");
+//        t1.start();
         List<ForecastDay> forecastDays = response.forecast.forecastday;
         ForecastDay day = getForeCastDay(inputDate, forecastDays);
+        Thread newThread = new Thread(String.valueOf(day));
+        newThread.start();
+        System.out.println("Сетевой запрос");
         System.out.println(day);
         List<Hour> hours = day.hour;
         Hour hour = getHour(inputTime, hours);
         System.out.println(hour);
 
+//        Thread t2 = new MyThread("Запись информации..");
+//        t2.start();
         String input = "City: " + city + "\n"
                 + "Date: " + inputDate + "\n"
                 + "Time: " + inputTime + "\n"
@@ -92,6 +98,9 @@ public class BadeshovMain {
                 + "Temperature: " + hour.temp_c + "\n"
                 + "Wind: " + hour.wind_mph;
 
+        Thread newThread2 = new Thread(input);
+        newThread2.start();
+        System.out.println("Запись информации");
         writeToFile(input);
     }
 
@@ -121,7 +130,7 @@ public class BadeshovMain {
         try (
                 FileWriter fileWriter = new FileWriter("src/main/java/badeshov/hw8/weather-info.txt");
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
-                ) {
+        ) {
             bufferedWriter.write(input);
             bufferedWriter.newLine();
             System.out.println("A file has been written successfully!");
