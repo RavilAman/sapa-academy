@@ -68,10 +68,9 @@ public class BadeshovMain {
             System.out.println(inputTime);
         } else {
             String time;
-            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:mm");
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
             time = "12:00";
             inputTime = LocalTime.parse(time, timeFormatter);
-            System.out.println(time);
         }
 
 
