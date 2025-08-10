@@ -11,4 +11,15 @@ public class ForecastDay {
     public Day day;
     public Astro astro;
     public List<Hour> hour;
+
+    @Override
+    public String toString() {
+        return "ForecastDay{" +
+                "date='" + date + '\'' +
+                ", date_epoch=" + date_epoch +
+                ", day=" + day +
+                ", astro=" + astro +
+                ", hour=" + hour +
+                '}';
+    }
 }

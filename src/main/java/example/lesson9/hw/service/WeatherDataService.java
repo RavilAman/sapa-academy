@@ -19,7 +19,7 @@ public class WeatherDataService {
 
     private static Logger logger = Logger.getLogger(WeatherDataService.class.getName());
 
-    public WeatherResponse getWeatherData(String apiKey, String city, int days) {
+    public WeatherResponse getWeatherData(String apiKey, String city, long days) {
         ObjectMapper mapper = new ObjectMapper();
         WeatherResponse weather = null;
         try {
