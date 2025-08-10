@@ -25,25 +25,22 @@ public class MainErke {
                 String otvet = scanner.nextLine();
                 if (!otvet.equalsIgnoreCase("да")) {
                     break;
-
                 }
             }
             list.add(tovar);
         }
     }
-
-        private static Map<String, Integer> getKol(List < String > list) {
-            HashMap<String, Integer> map = new HashMap<>();
-            for (String tovar : list) {
-                if (map.containsKey(tovar)) {
-                    map.put(tovar, map.get(tovar) + 1);
-                } else {
-                    map.put(tovar, 1);
-                }
-
+    private static Map<String, Integer> getKol(List<String> list) {
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String tovar : list) {
+            if (map.containsKey(tovar)) {
+                map.put(tovar, map.get(tovar) + 1);
+            } else {
+                map.put(tovar, 1);
             }
-            return map;
         }
+        return map;
+    }
 
 }
 
