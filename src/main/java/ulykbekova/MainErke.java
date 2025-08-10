@@ -1,46 +1,21 @@
 package ulykbekova;
 
-import ulykbekova.hw.five.Car;
-import ulykbekova.hw.five.EngineBrokenException;
-import ulykbekova.hw.five.FuelEmptyException;
+import ulykbekova.hw.six.ValueBox;
+import ulykbekova.hw.two.Rectangle;
+import ulykbekova.hw.two.Square;
+import ulykbekova.hw.two.Triangle;
 
-import java.util.Random;
 import java.util.Scanner;
-import java.util.logging.Logger;
-import static ulykbekova.hw.five.Car.drive;
+
 public class MainErke {
-    private static Logger logger = Logger.getLogger(MainErke.class.getName());
-    public static void main(String[] arsg) {
-        Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
-        Random random = new Random();
-        logger.info("Start to drive");
-        logger.info("Введите мару машины:");
-        String name = scanner1.nextLine();
-        while (true) {
-            logger.info("Залейте бензин:");
-            int fuel = scanner.nextInt();
-            boolean engineBroken = random.nextBoolean();
-            Car car = new Car(fuel, engineBroken, name);
-            try {
-                drive(car);
-            } catch (FuelEmptyException e) {
-                logger.info(e.getMessage());
-                logger.info("Хотите заправиться или завершить? refuel/stop ");
-                String otvet = scanner.next();
-                if (otvet.equals("refuel")) {
-                    continue;
-                } else if (otvet.equals("stop")) {
-                    logger.info("Finish");
-                    break;
-                } else {
-                    logger.info("ответ не верный");
-                    break;
-                }
-            } catch (EngineBrokenException e) {
-                logger.info(e.getMessage());
-                break;
-            }
-        }
+    public static void main(String[] args){
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Напишите 1 число ");
+        int a= scanner.nextInt();
+        System.out.println("Напишите 2 число ");
+        int b= scanner.nextInt();
+        ValueBox<Integer>box1=new ValueBox<>(a);
+        ValueBox<Integer>box2=new ValueBox<>(b);
+        System.out.println("из двух чисел максимальное ="+ValueBox.max(box1, box2));
     }
 }
