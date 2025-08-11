@@ -1,21 +1,45 @@
 package ulykbekova;
 
-import ulykbekova.hw.six.ValueBox;
-import ulykbekova.hw.two.Rectangle;
-import ulykbekova.hw.two.Square;
-import ulykbekova.hw.two.Triangle;
+import sun.net.www.MessageHeader;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.logging.Logger;
 
 public class MainErke {
-    public static void main(String[] args){
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("Напишите 1 число ");
-        int a= scanner.nextInt();
-        System.out.println("Напишите 2 число ");
-        int b= scanner.nextInt();
-        ValueBox<Integer>box1=new ValueBox<>(a);
-        ValueBox<Integer>box2=new ValueBox<>(b);
-        System.out.println("из двух чисел максимальное ="+ValueBox.max(box1, box2));
+    private static final Logger logger = Logger.getLogger(MainErke.class.getName());
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<String> list = new LinkedList<>();
+        while (true) {
+            logger.info("Введите товар (или /stop для завершения): ");
+            String tovar = scanner.nextLine();
+
+            if (tovar.equalsIgnoreCase("stop")) {
+                Map<String, Integer> kol = getKol(list);
+                for (String key : kol.keySet()) {
+                    logger.info(key + " - " + kol.get(key) + " шт");
+                }
+                logger.info("Хотите добавить ещё товары? (да/нет)");
+                String otvet = scanner.nextLine();
+                if (!otvet.equalsIgnoreCase("да")) {
+                    break;
+                }
+            }
+            list.add(tovar);
+        }
     }
+    private static Map<String, Integer> getKol(List<String> list) {
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String tovar : list) {
+            if (map.containsKey(tovar)) {
+                map.put(tovar, map.get(tovar) + 1);
+            } else {
+                map.put(tovar, 1);
+            }
+        }
+        return map;
+    }
+
 }
+
