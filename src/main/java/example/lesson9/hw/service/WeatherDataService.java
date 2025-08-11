@@ -33,7 +33,7 @@ public class WeatherDataService {
                 // тут ответ от внешнего сервиса парсится и записывается в наш Java объект, теперь весь ответ лежит в нем
                 // все данные которые требуются по задаче вы найдете в тут, вам нужно будет пробежаться по ответу, чтобы найти их.
                 weather = mapper.readValue(response.body(), WeatherResponse.class);
-                logger.info("Got weather response: \n" + mapper.writeValueAsString(weather)); // сам ответ увидите здесь -
+//                logger.info("Got weather response: \n" + mapper.writeValueAsString(weather)); // сам ответ увидите здесь -
                 // код выведет все в консоль, и в ней уже можно поискать нужные поля
                 // можете искать тут или в классах, которые лежат в model
                 // например, данные о времени которые требуются в последнем подпункте пункта 2.4 (когда юзер ввел время)
