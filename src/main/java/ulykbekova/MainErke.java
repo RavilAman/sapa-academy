@@ -50,15 +50,13 @@ public class MainErke {
         List<Hour> hours = day.hour;
         LocalTime inputTime;
         logger.info("Хотите ввести время (да/нет)");
-        String otvet = scanner.nextLine();
-
+        String otvet = scanner.next();
         if (otvet.equalsIgnoreCase("да")) {
             logger.info("Введите время: чч:мм");
-            String time = scanner.nextLine();
+            String time = scanner.next();
             DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
            inputTime = LocalTime.parse(time, timeFormatter);
-
 
             int minut = inputTime.getMinute();
 
@@ -86,7 +84,7 @@ public class MainErke {
                + "Состояние погоды: " + hour.condition.text + "\n"
                + "температуру: " + hour.temp_c + "C" + "\n"
                + "скорость ветра "+hour.wind_kph + "км/ч";
-
+        writleFile(text);
 
     }
 
@@ -111,14 +109,14 @@ public class MainErke {
     }
     private static void writleFile(String text){
         try (
-            FileWriter fileWriter = new FileWriter("src/maim/java/ulykbekova/hw8.text");
+            FileWriter fileWriter = new FileWriter("src/main/java/ulykbekova/hw/eigth/hw8.txt");
             BufferedWriter bufferedWriter= new BufferedWriter(fileWriter);
         ){
             bufferedWriter.write(text);
             bufferedWriter.newLine();
             logger.info("Строка записана в файл");
         }catch (IOException e) {
-            logger.info("Ошибка при записи в файл"+e.getMessage());
+            logger.info("Ошибка при записи в файл "+e.getMessage());
         }
     }
 }
