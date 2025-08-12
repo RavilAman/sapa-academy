@@ -1,0 +1,6 @@
+City: Astana
+Date: 2025-08-08
+Time: 12:00
+Forecast: Sunny
+Temperature: 18.6
+Wind: 10.7
