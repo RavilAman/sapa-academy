@@ -9,3 +9,5 @@
 - [HW 7 — Collection](src/main/java/example/lesson8/README.md)
 - [HW 9 — IO](src/main/java/example/lesson9/README.md)
 - [HW 10 — Multithreading](src/main/java/example/lesson10/README.md)
+- [HW 12 — Multithreading](src/main/java/example/lesson12/README.md)
+- [HW 13 — Multithreading](src/main/java/example/lesson13/README.md)
