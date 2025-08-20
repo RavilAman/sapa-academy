@@ -94,4 +94,4 @@ drop index idx_genre; --0.004s
 
 create index idx_title on Books(Title); --0.016s
 
-create fulltext index idx_title_text on Books(Title); --Postgre has NOT fulltext
+create fulltext index idx_title_text on Books(Title); --Postgre NOT have fulltext
