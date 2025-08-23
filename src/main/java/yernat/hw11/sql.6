@@ -1,0 +1,11 @@
+create index idx_books_title
+on books
+using gin (to_tsvector('russian', title));
+
+select id, title, author, year
+from books
+where to_tsvector('russian', title) @@ to_tsquery('мир');
+
+select id, title, author, year
+from books
+where to_tsvector('english', title) @@ to_tsquery('code');

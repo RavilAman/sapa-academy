@@ -1,0 +1,8 @@
+create index idx_books_genre
+on books(genre);
+
+create index idx_books_author_year
+on books(author, year);
+
+create unique index idx_members_email
+on members(email);

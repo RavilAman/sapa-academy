@@ -1,0 +1,11 @@
+EXPLAIN ANALYZE
+SELECT *
+FROM books
+WHERE genre = 'Fantasy';
+
+CREATE INDEX idx_books_genre ON books(genre);
+
+EXPLAIN ANALYZE
+SELECT *
+FROM books
+WHERE genre = 'Fantasy';

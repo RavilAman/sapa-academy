@@ -1,0 +1,15 @@
+select b.title, m.full_name
+from loans l
+join books b on l.book_id = b.id
+join members m on l.member_id = m.id;
+
+select m.full_name
+from members m
+left join loans l on m.id = l.member_id
+where l.member_id is null;
+
+select b.title, count(*) as total_loans
+from loans l
+join books b on l.book_id = b.id
+group by b.title
+having count(*) > 1;
