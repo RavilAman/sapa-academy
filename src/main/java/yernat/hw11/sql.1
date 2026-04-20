@@ -1,0 +1,28 @@
+create table books
+(
+    id serial primary key,
+    title varchar(100) not null,
+    author varchar(100) not null,
+    year int,
+    genre varchar(100)
+);
+
+create table members
+(
+    id serial primary key,
+    full_name varchar(150) not null,
+    phone int,
+    email varchar(150) unique not null
+);
+
+create table loans
+(
+    book_id int,
+    member_id int,
+    loan_date date,
+    return_date date,
+    primary key (book_id, member_id, loan_date),
+    foreign key (book_id) references books(id),
+    foreign key (member_id) references members(id)
+);
+
